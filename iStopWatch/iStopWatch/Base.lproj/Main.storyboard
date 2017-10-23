@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iStopWatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suZ-j0-9pQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="iStopWatch" id="MwU-Ci-7SK"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tU-kn-Of9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="95"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="PS8-NZ-LOo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="72"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="JQF-0U-Yek">
+                                <rect key="frame" x="82.5" y="169" width="210" height="90"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cix-ma-CMc">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                                        <state key="normal" image="Start.png"/>
+                                        <connections>
+                                            <action selector="startStopBTPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="09a-BW-Lt2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edD-1z-m6l">
+                                        <rect key="frame" x="130" y="0.0" width="80" height="90"/>
+                                        <state key="normal" image="Lap.png"/>
+                                        <connections>
+                                            <action selector="lapResetBTPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7n1-IQ-7uu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="3VI-rZ-4UN"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="amQ-AL-2Hl">
+                                <rect key="frame" x="0.0" y="269" width="375" height="398"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="R04-Yn-N7g"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qAA-he-2i5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0tU-kn-Of9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1pU-iW-b1B"/>
+                            <constraint firstItem="suZ-j0-9pQ" firstAttribute="trailing" secondItem="0tU-kn-Of9" secondAttribute="trailing" id="Bw9-4k-5M3"/>
+                            <constraint firstItem="0tU-kn-Of9" firstAttribute="top" secondItem="suZ-j0-9pQ" secondAttribute="bottom" id="CgF-8H-MnX"/>
+                            <constraint firstItem="suZ-j0-9pQ" firstAttribute="leading" secondItem="amQ-AL-2Hl" secondAttribute="leading" id="CmK-DL-Htu"/>
+                            <constraint firstAttribute="trailing" secondItem="0tU-kn-Of9" secondAttribute="trailing" id="HYQ-v7-JhT"/>
+                            <constraint firstItem="amQ-AL-2Hl" firstAttribute="top" secondItem="JQF-0U-Yek" secondAttribute="bottom" constant="10" id="IeO-ZQ-cfs"/>
+                            <constraint firstItem="JQF-0U-Yek" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NRm-7m-MM4"/>
+                            <constraint firstItem="suZ-j0-9pQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SK6-oe-sRa"/>
+                            <constraint firstItem="suZ-j0-9pQ" firstAttribute="leading" secondItem="0tU-kn-Of9" secondAttribute="leading" id="Ub2-6d-fb9"/>
+                            <constraint firstItem="suZ-j0-9pQ" firstAttribute="bottom" secondItem="0tU-kn-Of9" secondAttribute="top" id="VTt-gc-NhB"/>
+                            <constraint firstItem="suZ-j0-9pQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XZN-7q-RQ1"/>
+                            <constraint firstItem="amQ-AL-2Hl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="agC-9S-iTT"/>
+                            <constraint firstItem="suZ-j0-9pQ" firstAttribute="trailing" secondItem="amQ-AL-2Hl" secondAttribute="trailing" id="cr9-YX-Q4X"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="amQ-AL-2Hl" secondAttribute="bottom" id="eT9-da-iEj"/>
+                            <constraint firstItem="JQF-0U-Yek" firstAttribute="top" secondItem="0tU-kn-Of9" secondAttribute="bottom" constant="10" id="gDV-dQ-4sj"/>
+                            <constraint firstAttribute="trailing" secondItem="suZ-j0-9pQ" secondAttribute="trailing" id="pcz-bG-GHz"/>
+                            <constraint firstAttribute="trailing" secondItem="amQ-AL-2Hl" secondAttribute="trailing" id="v3y-t7-Jr7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="DisplayLB" destination="0tU-kn-Of9" id="gCk-m3-eGm"/>
+                        <outlet property="lapResetLB" destination="edD-1z-m6l" id="FU2-lX-Xgs"/>
+                        <outlet property="lapsTableView" destination="amQ-AL-2Hl" id="RmM-AL-Gg4"/>
+                        <outlet property="startStopLB" destination="cix-ma-CMc" id="Bid-jU-kSS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Lap.png" width="80" height="80"/>
+        <image name="Start.png" width="80" height="80"/>
+    </resources>
+</document>
