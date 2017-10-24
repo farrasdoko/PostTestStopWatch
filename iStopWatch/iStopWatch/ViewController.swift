@@ -85,11 +85,6 @@ cell.backgroundColor = UIColor.black
         displayString = "\(minutesString):\(secondsString).\(fractionsString)"
         DisplayLB.text = displayString
     }
-    
-    
-    
-    
-
     //MARK: - IBActions
     
     @IBAction func startStopBTPressed(_ sender: UIButton) {
@@ -102,9 +97,6 @@ cell.backgroundColor = UIColor.black
             startStopLB.setImage(UIImage(named: "Stop.png"), for: .normal)
             lapResetLB.setImage(UIImage(named: "Lap.png"), for: .normal)
             addLap = true
-            
-            
-            
         } else {
             timer.invalidate()
             startStopWatch =  true
@@ -113,9 +105,6 @@ cell.backgroundColor = UIColor.black
             addLap = false
             
         }
-        
-        
-        
     }
     
     @IBAction func lapResetBTPressed(_ sender: UIButton) {
@@ -125,10 +114,7 @@ cell.backgroundColor = UIColor.black
             
             lapsArray.insert(displayString, at: 0)
             lapsTableView.reloadData()
-            
-            
-            
-        } else {
+            } else {
             addLap = false
             lapResetLB.setImage(UIImage(named: "Lap.png"), for: .normal)
             lapsArray.removeAll()
@@ -141,19 +127,7 @@ cell.backgroundColor = UIColor.black
             displayString = "00:00.00"
             DisplayLB.text = displayString
         }
-        
-        
-        
-        
-        
-        
     }
-    
-    
-    
-    
-    
-
 }
 
 
